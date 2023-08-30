@@ -1,0 +1,29 @@
+{
+  "name": "namaste-react-code",
+  "version": "1.0.0",
+  "description": "code for namaste react class",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khaniliyas/namaste-react-code.git"
+  },
+  "author": "iliyaskhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khaniliyas/namaste-react-code/issues"
+  },
+  "homepage": "https://github.com/khaniliyas/namaste-react-code#readme",
+  "devDependencies": {
+    "parcel": "^2.9.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "Last 2 version"
+  ]
+}

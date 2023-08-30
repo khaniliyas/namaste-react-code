@@ -1,0 +1,11 @@
+.heading {
+  color: aquamarine;
+}
+.layout {
+  border: 1px solid black;
+  text-align: center;
+}
+.outlayout {
+  border: 1px solid aquamarine;
+  padding: 10px;
+}
