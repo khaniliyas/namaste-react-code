@@ -17,7 +17,6 @@
 }
 .res-logo {
   width: 200px;
-  height: 250px;
 }
 .res-card {
   background-color: #f0f0f0;
@@ -30,8 +29,4 @@
 }
 .body {
   padding: 5px;
-}
-.res-container {
-  display: flex;
-  flex-wrap: wrap;
 }
