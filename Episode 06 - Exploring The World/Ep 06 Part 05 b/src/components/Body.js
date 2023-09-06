@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 const Body = () => {
   const [resList, setList] = useState([]);
-  const [searchText, setSearchText] = useState("");
-  const [filteredList, setFilteredList] = useState([]);
   useEffect(() => {
     fetchData();
   }, []);
@@ -17,9 +15,6 @@ const Body = () => {
     setList(
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    setFilteredList(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
   };
 
   return resList.length === 0 ? (
@@ -27,44 +22,20 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
-        <div className="search">
-          <input
-            type="text"
-            className="search-box"
-            value={searchText}
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
-          />
-          <button
-            className="search-btn"
-            onClick={() => {
-              console.log(searchText);
-              const fList = resList.filter((res) => {
-                return res.info.name
-                  .toLowerCase()
-                  .includes(searchText.toLowerCase());
-              });
-              setFilteredList(fList);
-            }}
-          >
-            Search
-          </button>
-        </div>
         <button
           className="filter-btn"
           onClick={() => {
-            const fList = resList.filter((rest) => {
+            const filterdList = resList.filter((rest) => {
               return rest.info.avgRating > 4;
             });
-            setFilteredList(fList);
+            setList(filterdList);
           }}
         >
           Top Rated Restaurants
         </button>
       </div>
       <div className="res-container">
-        {filteredList.map((restaurant) => (
+        {resList.map((restaurant) => (
           <RestaurantCards key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>

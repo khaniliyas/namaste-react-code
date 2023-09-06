@@ -4,7 +4,6 @@ import Shimmer from "./Shimmer";
 const Body = () => {
   const [resList, setList] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const [filteredList, setFilteredList] = useState([]);
   useEffect(() => {
     fetchData();
   }, []);
@@ -15,9 +14,6 @@ const Body = () => {
 
     const json = await data.json();
     setList(
-      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilteredList(
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
@@ -45,7 +41,7 @@ const Body = () => {
                   .toLowerCase()
                   .includes(searchText.toLowerCase());
               });
-              setFilteredList(fList);
+              setList(fList);
             }}
           >
             Search
@@ -57,14 +53,14 @@ const Body = () => {
             const fList = resList.filter((rest) => {
               return rest.info.avgRating > 4;
             });
-            setFilteredList(fList);
+            setList(fList);
           }}
         >
           Top Rated Restaurants
         </button>
       </div>
       <div className="res-container">
-        {filteredList.map((restaurant) => (
+        {resList.map((restaurant) => (
           <RestaurantCards key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
