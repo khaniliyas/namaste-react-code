@@ -3,6 +3,3 @@ export const LOGO_URL =
 
 export const IMG_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
-
-export const Rest_URL =
-  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.0520059&lng=72.8216728&restaurantId=";
